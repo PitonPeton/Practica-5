@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 4</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <style type="text/javascript"></style>
+    <script>
+        var number = document.getElementById("numbox");
+        if(number < 1 || number > 10) {
+            alert("Solo valores del 1 al 10!")
+        }
+        else {
+
+        }
+    </script>
+    <style>
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+    </style>
+  </head>
+  <body>
+    <form>
+        <label for="numbox">Numero entre 1 y 10:</label><br />
+        <input type="number" id="numbox" name="numbox"/>
+    </form>
+    <button>
+        
+    </button>
+  </body>
+</html>
