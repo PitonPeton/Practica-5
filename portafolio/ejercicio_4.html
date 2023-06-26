@@ -20,12 +20,14 @@
 
       if (numero < 1 || numero > 10) {
 
-        $("#tabla").modal('show')
+        $("#Error").modal('show')
 
       } else {
         var number = document.getElementsByClassName("number");
+        var contador = 1;
         for (var i = 0; i < number.length; i++) {
-          number[i].textContent = numero;
+          number[i].textContent = contador + ' x ' + numero + ' = ';
+          contador++
         }
 
         var result = document.getElementsByClassName("result");
@@ -138,74 +140,50 @@
           <table class="table table-striped table-bordered table-hover">
             <tbody>
               <tr>
-                <td>1</td>
-                <td>x</td>
                 <td class="number">X</td>
                 <td class="result">X</td>
               </tr>
               <tr>
-                <td>2</td>
-                <td>x</td>
                 <td class="number">X</td>
                 <td class="result">X</td>
               </tr>
               <tr>
-                <td>3</td>
-                <td>x</td>
                 <td class="number">X</td>
                 <td class="result">X</td>
               </tr>
               <tr>
-                <td>4</td>
-                <td>x</td>
                 <td class="number">X</td>
                 <td class="result">X</td>
               </tr>
               <tr>
-                <td>5</td>
-                <td>x</td>
                 <td class="number">X</td>
                 <td class="result">X</td>
               </tr>
               <tr>
-                <td>6</td>
-                <td>x</td>
                 <td class="number">X</td>
                 <td class="result">X</td>
               </tr>
               <tr>
-                <td>7</td>
-                <td>x</td>
                 <td class="number">X</td>
                 <td class="result">X</td>
               </tr>
               <tr>
-                <td>8</td>
-                <td>x</td>
                 <td class="number">X</td>
                 <td class="result">X</td>
               </tr>
               <tr>
-                <td>9</td>
-                <td>x</td>
                 <td class="number">X</td>
                 <td class="result">X</td>
               </tr>
               <tr>
-                <td>10</td>
-                <td>x</td>
                 <td class="number">X</td>
                 <td class="result">X</td>
               </tr>
               <tr>
-                <td>11</td>
-                <td>x</td>
                 <td class="number">X</td>
                 <td class="result">X</td>
               </tr>
               <tr>
-                <td>12</td>
-                <td>x</td>
                 <td class="number">X</td>
                 <td class="result">X</td>
               </tr>
