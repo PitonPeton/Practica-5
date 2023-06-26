@@ -19,15 +19,23 @@
       var numero = document.querySelector('#textbox').value;
 
       if (numero < 1 || numero > 10) {
+
         $("#tabla").modal('show')
+
       } else {
-        let mult = [];
-        for (let i = 1; i < 13; i++) {
-          mult.push(numero * i);
+        var number = document.getElementsByClassName("number");
+        for (var i = 0; i < number.length; i++) {
+          number[i].textContent = numero;
         }
-        for (x of mult) {
-          alert(x);
+
+        var result = document.getElementsByClassName("result");
+        var contador = 1;
+        for (var i = 0; i < result.length; i++) {
+          result[i].textContent = (numero * contador);
+          contador++;
         }
+
+        $("#tabla").modal('show')
       }
     }
   </script>
@@ -132,74 +140,74 @@
               <tr>
                 <td>1</td>
                 <td>x</td>
-                <td id="1">X</td>
-                <td id="res1">X</td>
+                <td class="number">X</td>
+                <td class="result">X</td>
               </tr>
               <tr>
                 <td>2</td>
                 <td>x</td>
-                <td id="2">X</td>
-                <td id="res2">X</td>
+                <td class="number">X</td>
+                <td class="result">X</td>
               </tr>
               <tr>
                 <td>3</td>
                 <td>x</td>
-                <td id="3">X</td>
-                <td id="res3">X</td>
+                <td class="number">X</td>
+                <td class="result">X</td>
               </tr>
               <tr>
                 <td>4</td>
                 <td>x</td>
-                <td id="4">X</td>
-                <td id="res4">X</td>
+                <td class="number">X</td>
+                <td class="result">X</td>
               </tr>
               <tr>
                 <td>5</td>
                 <td>x</td>
-                <td id="5">X</td>
-                <td id="res5">X</td>
+                <td class="number">X</td>
+                <td class="result">X</td>
               </tr>
               <tr>
                 <td>6</td>
                 <td>x</td>
-                <td id="6">X</td>
-                <td id="res6">X</td>
+                <td class="number">X</td>
+                <td class="result">X</td>
               </tr>
               <tr>
                 <td>7</td>
                 <td>x</td>
-                <td id="7">X</td>
-                <td id="res7">X</td>
+                <td class="number">X</td>
+                <td class="result">X</td>
               </tr>
               <tr>
                 <td>8</td>
                 <td>x</td>
-                <td id="8">X</td>
-                <td id="res8">X</td>
+                <td class="number">X</td>
+                <td class="result">X</td>
               </tr>
               <tr>
                 <td>9</td>
                 <td>x</td>
-                <td id="9">X</td>
-                <td id="res9">X</td>
+                <td class="number">X</td>
+                <td class="result">X</td>
               </tr>
               <tr>
                 <td>10</td>
                 <td>x</td>
-                <td id="10">X</td>
-                <td id="res10">X</td>
+                <td class="number">X</td>
+                <td class="result">X</td>
               </tr>
               <tr>
                 <td>11</td>
                 <td>x</td>
-                <td id="11">X</td>
-                <td id="res11">X</td>
+                <td class="number">X</td>
+                <td class="result">X</td>
               </tr>
               <tr>
                 <td>12</td>
                 <td>x</td>
-                <td id="12">X</td>
-                <td id="res12">X</td>
+                <td class="number">X</td>
+                <td class="result">X</td>
               </tr>
             </tbody>
           </table>
