@@ -31,6 +31,10 @@
       transform: translate(-50%, -50%);
       text-align: center;
     }
+
+    .navbar-brand {
+      margin-left: 10px;
+    }
   </style>
   <script type="text/javascript">
     function welcome() {
@@ -46,6 +50,13 @@
 
 <body>
 
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="../index.html">
+      <img src="../img/thinking-face_1f914.webp" width="30" height="30" class="d-inline-block align-top" alt="">
+      Practica 5
+    </a>
+  </nav>
+
   <div id="caja">
     <div id="cajita">
 
@@ -55,10 +66,11 @@
           <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
         </div>
 
-        <input type="text" id="textbox" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" >
+        <input type="text" id="textbox" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
 
         <div class="input-group-append">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" onclick="welcome()">Enviar</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"
+            onclick="welcome()">Enviar</button>
         </div>
 
       </div>
@@ -76,7 +88,7 @@
         </div>
 
         <div class="modal-body">
-          <div  id="mostrar">Descripcion</div>
+          <div id="mostrar">Descripcion</div>
         </div>
 
         <div class="modal-footer">
