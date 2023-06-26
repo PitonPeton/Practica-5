@@ -1,21 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 3</title>
-    <script type="text/javascript">
-        var edad = prompt("Introduzca su edad")
-        if(edad < 18) {
-            alert("Usted tiene acceso a servicios limitados.")
-        }
-        else {
-            alert("Usted tiene acceso a todos nuestros servicios.")
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <title>Ejercicio 3</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    #caja {
+      height: 100vh;
+      background-color: gray;
+    }
+
+    #cajita {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  </style>
+  <script type="text/javascript">
+    function edad() {
+      var age = document.querySelector('#textbox').value;
+
+      if (age < 18) {
+        var mostrar = document.getElementById("mostrar");
+        mostrar.innerHTML = "Usted tiene accesos a servicios limitados";
+      } else {
+        var mostrar = document.getElementById("mostrar");
+        mostrar.innerHTML = "Usted tiene acceso a todos nuestros servicios";
+      }
+
+    }
+  </script>
 </head>
+
 <body>
-    
+
+  <div id="caja">
+    <div id="cajita">
+
+      <div class="input-group input-group-sm mb-3">
+
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Edad</span>
+        </div>
+
+        <input type="text" id="textbox" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+
+        <div class="input-group-append">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"
+            onclick="edad()">Enviar</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5>Acceso</h5>
+          <button class="btn btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div id="mostrar">Descripcion</div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
 </body>
+
 </html>

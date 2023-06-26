@@ -1,42 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio 4</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <style type="text/javascript"></style>
-    <script>
-        var number = document.getElementById("numbox");
-        if(number < 1 || number > 10) {
-            alert("Solo valores del 1 al 10!")
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <title>Ejercicio 4</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <style type="text/javascript"></style>
+  <script>
+    function calcular() {
+      var numero = document.querySelector('#textbox').value;
+
+      if (numero < 1 || numero > 10) {
+        $("#tabla").modal('show')
+      } else {
+        let mult = [];
+        for (let i = 1; i < 13; i++) {
+          mult.push(numero * i);
         }
-        else {
-
+        for (x of mult) {
+          alert(x);
         }
-    </script>
-    <style>
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
       }
+    }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
 
-      input[type="number"] {
-        -moz-appearance: textfield;
-      }
+    #caja {
+      height: 100vh;
+      background-color: gray;
+    }
 
-    </style>
-  </head>
-  <body>
-    <form>
-        <label for="numbox">Numero entre 1 y 10:</label><br />
-        <input type="number" id="numbox" name="numbox"/>
-    </form>
-    <button type="button">Calcular</button>
-  </body>
+    #cajita {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    #tabla .table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #tabla .table th,
+    #tabla .table td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    table {
+      table-layout: fixed;
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="caja">
+    <div id="cajita">
+
+      <div class="input-group input-group-sm mb-3">
+
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Numero</span>
+        </div>
+
+        <input type="text" id="textbox" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+
+        <div class="input-group-append">
+          <button type="button" class="btn btn-primary" onclick="calcular()">Enviar</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal fade" id="Error">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5>Valor inaceptable</h5>
+          <button class="btn btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div>Solo numeros del 1 al 10</div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="tabla">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5>Tabla de multiplicar</h5>
+          <button class="btn btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <table class="table table-striped table-bordered table-hover">
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>x</td>
+                <td id="1">X</td>
+                <td id="res1">X</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>x</td>
+                <td id="2">X</td>
+                <td id="res2">X</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>x</td>
+                <td id="3">X</td>
+                <td id="res3">X</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>x</td>
+                <td id="4">X</td>
+                <td id="res4">X</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>x</td>
+                <td id="5">X</td>
+                <td id="res5">X</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>x</td>
+                <td id="6">X</td>
+                <td id="res6">X</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>x</td>
+                <td id="7">X</td>
+                <td id="res7">X</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>x</td>
+                <td id="8">X</td>
+                <td id="res8">X</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>x</td>
+                <td id="9">X</td>
+                <td id="res9">X</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>x</td>
+                <td id="10">X</td>
+                <td id="res10">X</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>x</td>
+                <td id="11">X</td>
+                <td id="res11">X</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>x</td>
+                <td id="12">X</td>
+                <td id="res12">X</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
+
 </html>

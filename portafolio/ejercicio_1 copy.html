@@ -44,7 +44,7 @@
     }
   </style>
   <script>
-    var meses = [
+    var mes = [
       "Enero",
       "Febrero",
       "Marzo",
@@ -59,20 +59,40 @@
       "Diciembre",
     ];
     
-    function mes(){
-      alert(meses[6])
-    }
+    $('#mostrar').html("Hola")
 
   </script>
 </head>
 
 <body>
-
   <div id="caja">
     <div id="cajita">
-      <button type="button" class="btn btn-primary btn-lg" onclick="mes()">
+      <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">
         Sexto Mes
       </button>
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h3>Sexto Mes</h3>
+          <button class="btn btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div id="mostrar" class="modal-body">
+            Descripcion
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
+
+      </div>
     </div>
   </div>
   
